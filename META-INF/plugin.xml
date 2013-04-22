@@ -1,0 +1,48 @@
+<idea-plugin version="2">
+  <id>com.redexp.plugin.fold</id>
+  <name>Fold plugin</name>
+  <version>1.0</version>
+  <vendor email="redexp@github.com" url="http://github.com/redexp">MOC</vendor>
+
+    <depends>com.jetbrains.php</depends>
+
+  <description><![CDATA[
+      Extended folding
+      ]]></description>
+
+  <change-notes><![CDATA[ ]]></change-notes>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+  <!--<idea-version since-build="129.1"/>-->
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="com.redexp.plugin.fold.FoldAction" class="com.redexp.plugin.fold.FoldAction" text="Fold regions">
+          <add-to-group group-id="FoldingGroup" anchor="last"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt R"/>
+      </action>
+      <action id="ExpandSelection" class="com.redexp.plugin.fold.ExpandSelection" text="Expand selection"
+              description="Expand selected text">
+          <add-to-group group-id="FoldingGroup" anchor="last"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt BRACERIGHT"/>
+      </action>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+</idea-plugin>
